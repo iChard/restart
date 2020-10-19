@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .containerCenter1 {
+            border: 1px solid #000;
+            margin: 10px;
+            position: relative;
+        }
+        .box1 {
+            border: 1px solid red;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* margin-left: -50%; */
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .containerCenter2 {
+            border: 1px solid green;
+            margin: 10px;
+            position: relative;
+        }
+        .box2 {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerCenter1">
+        <p>居中实现方法1：</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>0</li>
+        </ul>
+        <div class="box1">
+            <img src="./public/sip1.png" alt="" srcset="">
+        </div>
+    </div>
+
+    <div class="containerCenter2">
+        <p>居中实现方法2：</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>0</li>
+        </ul>
+        <img class="box2" src="./public/sip1.png" alt="" srcset="">
+    </div>
+</body>
+</html>

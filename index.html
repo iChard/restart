@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .item {
+            width: 100%;
+            border: 1px solid #007fff;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item" data-index="1"></div>
+        <div class="item" data-index="2"></div>
+        <div class="item" data-index="3"></div>
+        <div class="item" data-index="4"></div>
+        <div class="item" data-index="5"></div>
+        <div class="item" data-index="6"></div>
+        <div class="item" data-index="7"></div>
+        <div class="item" data-index="8"></div>
+        <div class="item" data-index="9"></div>
+        <div class="item" data-index="10"></div>
+    </div>
+    <script>
+        const itemList = [...document.querySelectorAll('.item')]
+        const io = new IntersectionObserver(entries => {
+            console.log(entries)
+            entries.forEach((item, index) => {
+                if (item.isIntersecting) {
+                    console.log(item.target.getAttribute('data-index'))
+                    console.log(`正在显示第${item.target.getAttribute('data-index')}个节点`)
+                    io.unobserve(item.target)
+                }
+            })
+        }, {
+            // root: document.querySelector('.container'),
+            // rootMargin: '0px',
+            threshold: 1
+        })
+        itemList.forEach(item => io.observe(item))
+    </script>
+</body>
+
+</html>

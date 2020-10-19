@@ -1,0 +1,22 @@
+{
+  "name": "restart_fe",
+  "version": "0.1.0",
+  "description": "A new package...",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "author": "Meego",
+  "license": "",
+  "devDependencies": {
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "./node_modules/validate-commit-msg/index.js"
+    }
+  }
+}

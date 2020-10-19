@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        function doSomething() {
+            console.info('DOM loaded');
+        }
+
+        if (document.readyState === 'loading') {  // 此时加载尚未完成
+            document.addEventListener('DOMContentLoaded', doSomething);
+        } else {  // 此时`DOMContentLoaded` 已经被触发
+            doSomething();
+        }
+        for (let i = 0; i < 100000000; i++) { }
+    </script>
+    <script src="./scripts/defer2.js" defer="defer"></script>
+    <script src="./scripts/defer1.js" defer="defer"></script>
+</head>
+
+<body>
+    <div class="container" style="background-color: red;"></div>
+
+    <div class="a" id="a">1
+        <div class="b" id="b">2
+            <div class="c" id="c">3</div>
+        </div>
+    </div>
+    <script>
+        var $ = function(idname) {
+            return document.getElementById(idname)
+        }
+        $('a').onclick = function() {
+            alert('aaa')
+        }
+        $('b').onclick = function() {
+            alert('bbb')
+        }
+        $('c').onclick = function() {
+            event.cancelBubble = true
+            alert('ccc')
+        }
+    </script>
+</body>
+
+</html>
