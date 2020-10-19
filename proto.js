@@ -40,7 +40,7 @@ console.log(Foo.prototype.isPrototypeOf(foo))
 console.log(a.isPrototypeOf(b))
 console.log(Object.getOwnPropertyDescriptors(foo).__proto__)
 
-// 实现__proto__1122
+// 实现__proto__11
 Object.defineProperty(Object.prototype, '__proto__', {
     get: function() {
         return Object.getPrototypeOf(this)
