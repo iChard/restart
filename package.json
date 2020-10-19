@@ -16,7 +16,7 @@
   },
   "config": {
     "ghooks": {
-      "commit-msg": "./node_modules/validate-commit-msg/index.js"
+      "commit-msg": "./node_modules/validate-commit-msg"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
